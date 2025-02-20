@@ -1,0 +1,1426 @@
+/* style.css - 全てのボタンを美しくヘタミュ風デザインに */
+
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+ 
+
+body {
+
+    background: linear-gradient(to bottom, #cde6f5 0%, #ffffff 85%);
+
+    /* 優しい青白い空 */
+
+    font-family: 'Noto Sans JP', sans-serif;
+
+    font-weight: 400 !important;
+
+    margin: 0;
+
+    padding: 20px;
+
+    color: #333;
+
+    position: relative;
+
+    overflow-x: hidden;
+
+    /* 横スクロールを防ぐ */
+
+}
+
+ 
+
+/* プルダウンメニューをかわいくデザイン */
+
+select {
+
+    appearance: none;
+
+    /* デフォルトの矢印を非表示 */
+
+    -webkit-appearance: none;
+
+    -moz-appearance: none;
+
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 25px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.3s ease;
+
+    outline: none;
+
+    text-align: center;
+
+    width: auto;
+
+}
+
+ 
+
+/* ホバー時にふわっと光る */
+
+select:hover {
+
+    background: linear-gradient(135deg, #ff80ab, #f78da7);
+
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.3);
+
+    transform: scale(1.05);
+
+}
+
+ 
+
+/* 選択時に明るく光る */
+
+select:focus {
+
+    box-shadow: 0 0 12px rgba(255, 192, 203, 0.8);
+
+    border: 2px solid #ff80ab;
+
+}
+
+ 
+
+/* カスタム矢印 */
+
+select::after {
+
+    content: "▼";
+
+    font-size: 14px;
+
+    color: white;
+
+    position: absolute;
+
+    right: 15px;
+
+    pointer-events: none;
+
+}
+
+ 
+
+/* プルダウンのリストもスタイリッシュに */
+
+option {
+
+    background: white;
+
+    color: #333;
+
+    padding: 5px;
+
+    font-size: 16px;
+
+}
+
+ 
+
+/* コンビニ支払いの選択プルダウンにも適用 */
+
+#convenienceCount {
+
+    background: linear-gradient(135deg, #efdff7a4, #f1d6e9a3);
+
+    color: #333;
+
+}
+
+ 
+
+/* ❄️ ボタンを氷のような透明感に */
+
+button {
+
+    padding: 12px 24px;
+
+    background: rgba(255, 255, 255, 0.4);
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    border-radius: 30px;
+
+    color: #fff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.3s ease;
+
+    backdrop-filter: blur(8px);
+
+}
+
+ 
+
+/* ❄️ ホバー時にふわっと輝く */
+
+button:hover {
+
+    background: rgba(255, 255, 255, 0.6);
+
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.4);
+
+    transform: scale(1.05);
+
+    animation: snowHover 0.5s linear infinite;
+
+}
+
+ 
+
+button[value] {
+
+    background: linear-gradient(135deg, #c0d7eb, #e6c8f3) !important;
+
+    color: #333 !important;
+
+}
+
+ 
+
+button[value]:hover {
+
+    background: linear-gradient(135deg, #c267d2, #ec6a6a) !important;
+
+}
+
+ 
+
+button::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+
+    opacity: 0;
+
+    transition: opacity 0.6s;
+
+}
+
+ 
+
+button:hover::before {
+
+    opacity: 1;
+
+    animation: sparkle 1s infinite;
+
+}
+
+ 
+
+button.selected-button {
+
+    background: linear-gradient(135deg, #ba68c8, #e57373) !important;
+
+    color: white !important;
+
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5) !important;
+
+    transform: scale(1.1) !important;
+
+}
+
+ 
+
+button[type="button"] {
+
+    color: #222;
+
+    font-weight: 500;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    border: 2px solid #ccc;
+
+    display: inline-block;
+
+    margin: 0;
+
+    /* 余白リセット */
+
+    text-align: center;
+
+}
+
+ 
+
+@keyframes sparkle {
+
+    0% {
+
+        transform: scale(1) rotate(0deg);
+
+    }
+
+ 
+
+    50% {
+
+        transform: scale(1.2) rotate(180deg);
+
+    }
+
+ 
+
+    100% {
+
+        transform: scale(1) rotate(360deg);
+
+    }
+
+}
+
+ 
+
+label {
+
+    display: block;
+
+    margin: 20px auto;
+
+    font-size: 18px;
+
+    color: #1976d2;
+
+    text-align: center;
+
+}
+
+ 
+
+table {
+
+    margin: 20px auto;
+
+    width: 80%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    background-color: rgba(255, 255, 255, 0.591);
+
+    /* 透明感を追加 */
+
+    border-radius: 15px;
+
+    border: none !important;
+
+    /* 枠線を完全に消す */
+
+    outline: none !important;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 10px rgba(17, 17, 18, 0.231);
+
+    backdrop-filter: blur(8px);
+
+    /* ぼんやりとした効果 */
+
+}
+
+ 
+
+th,
+
+td {
+
+    border: none;
+
+    padding: 15px;
+
+    text-align: center;
+
+    border-bottom: 2px solid rgba(168, 193, 237, 0.21);
+
+    /* 日付との仕切り線 */
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+}
+
+ 
+
+th {
+
+    background-color: rgba(95, 149, 225, 0.411);
+
+    /* 柔らかい青系 */
+
+    color: #f6f6f7;
+
+    font-weight: 550;
+
+    letter-spacing: 1px;
+
+    border-bottom: 2px solid rgba(255, 255, 255, 0.053);
+
+    /* 透明感のある仕切り線 */
+
+}
+
+ 
+
+/* 奇数行の背景をほんのり変える */
+
+tr:nth-child(odd) {
+
+    background-color: rgba(143, 174, 201, 0.048);
+
+}
+
+
+
+
+/* 🔹 全選択ボタンを目立たなくする */
+
+#selectAll,
+
+.select-all-city {
+
+    display: block;
+
+    /* ブロック要素として中央配置 */
+
+    margin: 10px auto;
+
+    /* 上下の余白を調整して中央揃え */
+
+    padding: 8px 16px;
+
+    /* 小さめのボタン */
+
+    font-size: 14px;
+
+    /* フォントを小さく */
+
+    background: linear-gradient(135deg, #b4d1f165, #c29ef94d);
+
+    /* 薄いグレー */
+
+    color: #151718;
+
+    /* 文字色を落ち着いた色に */
+
+    border: 1px solid #ccc;
+
+    /* 枠をつける */
+
+    border-radius: 20px;
+
+    /* 角を丸く */
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    /* 軽めの影 */
+
+    transition: all 0.2s ease-in-out;
+
+    cursor: pointer;
+
+}
+
+ 
+
+/* 🔹 ホバー時に少し濃く */
+
+#selectAll:hover,
+
+.select-all-city:hover {
+
+    background: linear-gradient(135deg, #d6d6d6, #e6e6e6);
+
+    /* ほんのり濃く */
+
+    transform: scale(1.05);
+
+    /* ちょっと拡大 */
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+}
+
+ 
+
+/* 🔹 アクティブ（クリック時）の効果 */
+
+#selectAll:active,
+
+.select-all-city:active {
+
+    transform: scale(0.95);
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+}
+
+ 
+
+.convenience-select {
+
+    padding: 15px 25px;
+
+    /* 余白を少し増やす */
+
+    background: linear-gradient(135deg, #b5e4ed80, #a4aaef80);
+
+    /* 透明感を上げる */
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    /* 🔥 間隔を調整（少し広げる） */
+
+    font-size: 16px;
+
+    max-width: 280px;
+
+    /* 🔥 少し広げて余裕を持たせる */
+
+    margin: 10px auto;
+
+}
+
+ 
+
+/* 🔹 コンビニ支払いの選択プルダウンを中央に */
+
+.convenience-select select {
+
+    width: auto;
+
+    min-width: 120px;
+
+    /* 🔥 小さくなりすぎないように */
+
+    max-width: 180px;
+
+    /* 🔥 大きくなりすぎないように */
+
+    /* 🔥 これを大きくする！（小さすぎた） */
+
+    padding: 10px 12px;
+
+    /* 🔥 クリックしやすいサイズにする */
+
+    font-size: 16px;
+
+    text-align: center;
+
+    border: 2px solid #bbb;
+
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.3s ease-in-out;
+
+    margin: 0 auto;
+
+    /* 🔥 これで完璧に中央寄せ */
+
+}
+
+ 
+
+/* 🔹 コンビニ支払いのラベルもちゃんと中央に */
+
+.convenience-select label {
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    /* 🔥 ちょっとだけ太くして見やすく */
+
+    color: #333;
+
+    /* 🔥 コントラストを調整 */
+
+    text-align: center;
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    /* 🔥 ラベルとセレクトの間隔を調整 */
+
+}
+
+ 
+
+.convenience-select input[type="number"] {
+
+    width: 50px;
+
+    /* コンパクトに */
+
+    padding: 6px 8px;
+
+    font-size: 14px;
+
+    border: 2px solid #fff;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    background: #f0f8ff;
+
+    color: #333;
+
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.2s;
+
+}
+
+ 
+
+.convenience-select input[type="number"]:focus {
+
+    transform: scale(1.1);
+
+    border-color: #ff80ab;
+
+    outline: none;
+
+    box-shadow: 0 0 10px #ff80ab;
+
+}
+
+ 
+
+.calculation-area {
+
+    display: flex;
+
+    justify-content: center;
+
+    /* 中央寄せ */
+
+    align-items: center;
+
+    gap: 15px;
+
+    /* ボタンと入力欄の間隔 */
+
+    margin-top: 20px;
+
+    width: 100%;
+
+    /* 親要素の幅いっぱいに */
+
+    text-align: center;
+
+    /* 中央寄せ */
+
+    flex-direction: row;
+
+    /* 横並び */
+
+}
+
+ 
+
+/* タイトルを中央揃えで華やかに雪っぽく */
+
+h1 {
+
+    font-family: 'Lobster', cursive;
+
+    font-size: 50px;
+
+    color: white;
+
+    text-align: center;
+
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+
+        0 0 20px rgba(173, 216, 230, 0.8),
+
+        0 0 30px rgba(0, 191, 255, 0.8);
+
+    animation: fadeInUp 1.5s ease-out, glowEffect 2s infinite alternate;
+
+    position: relative;
+
+    padding: 20px;
+
+    margin-top: 50px;
+
+    /* 🔥 スペースを広げる */
+
+}
+
+ 
+
+@keyframes rotateSnow {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+ 
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+ 
+
+/* ✨ タイトルのふわっと登場アニメーション */
+
+@keyframes fadeInUp {
+
+    0% {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+ 
+
+    100% {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+ 
+
+/* ✨ タイトルの光が揺れるエフェクト */
+
+@keyframes glowEffect {
+
+    0% {
+
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+
+            0 0 15px rgba(173, 216, 230, 0.8),
+
+            0 0 25px rgba(0, 191, 255, 0.8);
+
+    }
+
+ 
+
+    100% {
+
+        text-shadow: 0 0 10px rgba(255, 255, 255, 1),
+
+            0 0 20px rgba(173, 216, 230, 1),
+
+            0 0 35px rgba(0, 191, 255, 1);
+
+    }
+
+}
+
+
+
+
+/* ❄️ 雪が積もるアニメーション */
+
+@keyframes snowPileUp {
+
+    0% {
+
+        opacity: 0;
+
+        transform: translateX(-50%) scaleX(0);
+
+    }
+
+ 
+
+    100% {
+
+        opacity: 1;
+
+        transform: translateX(-50%) scaleX(1);
+
+    }
+
+ 
+
+}
+
+ 
+
+@keyframes sparkle {
+
+    0% {
+
+        opacity: 0;
+
+        transform: scale(1);
+
+    }
+
+ 
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.2);
+
+    }
+
+ 
+
+    100% {
+
+        opacity: 0;
+
+        transform: scale(1);
+
+    }
+
+}
+
+ 
+
+/* 雪のアニメーションを追加 */
+
+.snowflake {
+
+    position: absolute;
+
+    top: -10px;
+
+    color: white;
+
+    font-size: 14px;
+
+    /* サイズを小さくしてナチュラルに */
+
+    filter: blur(2px);
+
+    /* ふんわり感を演出 */
+
+    animation: snowfall linear infinite;
+
+    opacity: 0.8;
+
+}
+
+ 
+
+@keyframes snow {
+
+    0% {
+
+        transform: translateY(0);
+
+        opacity: 0.8;
+
+    }
+
+ 
+
+    100% {
+
+        transform: translateY(100vh);
+
+        opacity: 0;
+
+    }
+
+}
+
+ 
+
+@keyframes snowfall {
+
+    0% {
+
+        transform: translateY(0) translateX(0);
+
+        opacity: 1;
+
+    }
+
+ 
+
+    100% {
+
+        transform: translateY(100vh) translateX(10px);
+
+        opacity: 0;
+
+    }
+
+}
+
+ 
+
+@keyframes snowHover {
+
+    0% {
+
+        filter: drop-shadow(0 0 5px white);
+
+    }
+
+ 
+
+    100% {
+
+        filter: drop-shadow(0 0 10px white);
+
+    }
+
+}
+
+ 
+
+/* ❄️ 雪の結晶のバリエーション（サイズ・速度・位置をランダムに） */
+
+.snowflake:nth-child(1) {
+
+    font-size: 12px;
+
+    animation-duration: 8s;
+
+    left: 5%;
+
+}
+
+ 
+
+.snowflake:nth-child(2) {
+
+    font-size: 18px;
+
+    animation-duration: 10s;
+
+    left: 15%;
+
+}
+
+ 
+
+.snowflake:nth-child(3) {
+
+    font-size: 14px;
+
+    animation-duration: 9s;
+
+    left: 25%;
+
+}
+
+ 
+
+.snowflake:nth-child(4) {
+
+    font-size: 10px;
+
+    animation-duration: 11s;
+
+    left: 40%;
+
+}
+
+ 
+
+.snowflake:nth-child(5) {
+
+    font-size: 20px;
+
+    animation-duration: 12s;
+
+    left: 55%;
+
+}
+
+ 
+
+.snowflake:nth-child(6) {
+
+    font-size: 14px;
+
+    animation-duration: 10s;
+
+    left: 70%;
+
+}
+
+ 
+
+.snowflake:nth-child(7) {
+
+    font-size: 12px;
+
+    animation-duration: 8s;
+
+    left: 85%;
+
+}
+
+ 
+
+.snowflake:nth-child(8) {
+
+    font-size: 18px;
+
+    animation-duration: 14s;
+
+    left: 95%;
+
+}
+
+ 
+
+h2 {
+
+    margin-top: 80px;
+
+    text-align: center;
+
+    color: #1976d2;
+
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+
+    font-weight: 400 !important;
+
+    font-size: 24px !important;
+
+    color: #1976d2 !important;
+
+}
+
+ 
+
+/* 🔹 リセットボタンのデザイン（目立たず薄めに） */
+
+#resetButton {
+
+    padding: 10px 20px;
+
+    background: linear-gradient(135deg, #9cb5ed3a, #bfabe850);
+
+    /* 薄いグレー */
+
+    border: 1px solid #ccc;
+
+    /* 少し目立たせる */
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    color: #333;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.2s ease-in-out;
+
+}
+
+ 
+
+/* 🔹 ホバー時に少し濃く */
+
+#resetButton:hover {
+
+    background: linear-gradient(135deg, #e0e0e0, #cfcfcf);
+
+    transform: scale(1.05);
+
+}
+
+ 
+
+/* 🔹 クリック時のアニメーション */
+
+#resetButton:active {
+
+    transform: scale(0.95);
+
+}
+
+ 
+
+/* 🎭 計算ボタンの視認性をアップ */
+
+#calculateButton {
+
+    padding: 15px 30px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    background: linear-gradient(135deg, #be59fc6f, #f5649e78);
+
+    color: white;
+
+    border-radius: 30px;
+
+    border: 2px solid white;
+
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+
+}
+
+ 
+
+#calculateButton:hover {
+
+    background: linear-gradient(135deg, #8991f964, #7bb9f037);
+
+    transform: scale(1.1);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+
+}
+
+ 
+
+/* ❄️ クリック時のアニメーション */
+
+#calculateButton:active {
+
+    transform: scale(0.95);
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+ 
+
+/* 🎶 音符のスタイル */
+
+.note {
+
+    position: absolute;
+
+    font-size: 24px;
+
+    /* 🎼 音符のサイズ */
+
+    font-weight: bold;
+
+    color: #ff4081;
+
+    /* 💖 目立つ色 */
+
+    opacity: 1;
+
+    animation: popNote 0.7s ease-out forwards;
+
+    /* ⏳ 0.5秒で消える */
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    text-shadow: 2px 2px 5px rgba(255, 64, 129, 0.5);
+
+}
+
+ 
+
+/* 🎼 音符がパッと広がって消えるアニメーション */
+
+@keyframes popNote {
+
+    0% {
+
+        transform: translate(0, 0) scale(1);
+
+        opacity: 1;
+
+    }
+
+ 
+
+    100% {
+
+        transform: translate(var(--dx, 0px), var(--dy, -50px)) scale(1.2);
+
+        opacity: 0;
+
+    }
+
+}
+
+ 
+
+.ooooo {
+
+    color: #fd7aa671", " #80ffa887", " #fe34638d", " #f0b95178", " #42a4f581
+
+}
+
+
+
+
+
+
+/*/*/
+
+/*/*/
+
+ 
+
+/*/*/
+
+/*
+
+ 
+
+/* 🌨️ ローディング画面のデザイン */
+
+#loading-screen {
+
+    font-family: 'Dancing Script', cursive;
+
+    /* かわいいフォント */
+
+    font-size: 24px;
+
+    color: #f893aa8b;
+
+    /* ふんわりピンク */
+
+    text-shadow: 2px 2px 5px rgba(255, 192, 203, 0.6);
+
+    /* ふんわり光る */
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: linear-gradient(to bottom, #c4e4f7, #ffffff);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 9999;
+
+    transition: opacity 0.5s ease-in-out;
+
+}
+
+ 
+
+/* ❄️ ローディング画面にも雪を降らせる */
+
+#loading-snow {
+
+    font-size: 40px;
+
+    /* ❄️ ローディングの雪を大きくする */
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    top: 0;
+
+    left: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+}
+
+ 
+
+#snowman {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+ 
+
+.snow-part {
+
+    background: white;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    opacity: 0;
+
+}
+
+ 
+
+.big {
+
+    width: 100px;
+
+    height: 100px;
+
+    bottom: 0;
+
+    animation: snowAppear 1.5s ease-out 0.5s forwards;
+
+}
+
+ 
+
+.medium {
+
+    width: 70px;
+
+    height: 70px;
+
+    bottom: 70px;
+
+    animation: snowAppear 1.5s ease-out 1.5s forwards;
+
+}
+
+ 
+
+.small {
+
+    width: 40px;
+
+    height: 40px;
+
+    bottom: 120px;
+
+    animation: snowAppear 1.5s ease-out 2.5s forwards;
+
+}
+
+ 
+
+@keyframes snowAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0);
+
+    }
+
+ 
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+ 
+
+/* 🌨️ ローディング完了でフェードアウト */
+
+.loaded #loading-screen {
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
